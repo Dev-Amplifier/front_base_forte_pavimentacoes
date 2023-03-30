@@ -1,0 +1,76 @@
+@import url("./../../helper.css");
+
+.navbar {
+    position: fixed !important;
+    z-index: 1000 !important;
+    padding: 0 !important;
+}
+
+.bg-navbar-custom {
+    opacity: 1;
+    background: rgba(0,0,0, .5);
+    animation-name: showMenu;
+    animation-duration: 2s;
+}
+
+.bg-navbar-custom::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 110px;
+    background: var(--main-orange);
+    animation-name: borderShowMenu;
+    animation-duration: 3s;
+}
+
+.logo {
+    background-image: url("./../../assets//LOGO_BASE_FORTE-2-sem-fundo.png");
+    background-size: cover;
+    background-position: center;
+    width: 190px !important;
+    height: 100px !important;
+     z-index: 1000 !important;
+     /* filter:drop-shadow(-3px -3px 50px  #fff) !important; */
+}
+
+.link-orange {
+    color: var(--main-orange) !important;
+    transition: all .3s ease !important;
+}
+
+.link-white{
+    color: #FFF !important;
+    transition: all .3s ease !important;
+}
+
+.link-white:hover {
+    
+    color: var(--main-orange) !important;
+    transform: scale(1.1) !important;
+    padding-inline: 15px !important;
+}
+
+.link-orange:hover {
+    color: #FFF !important;
+    transform: scale(1.1) !important;
+    padding-inline: 15px !important;
+}
+
+.link-hover {
+   transition: all .3s ease !important; 
+}
+
+.link-hover:hover {
+    transform: scale(1.1) !important;
+}
+
+@keyframes showMenu {
+  from {background: rgba(0,0,0, 0);}
+  to {background: rgba(0,0,0, .5);}
+}
+
+@keyframes borderShowMenu {
+  from {width: 0;}
+    to {width: 100%;}
+}

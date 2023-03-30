@@ -1,0 +1,130 @@
+import "./style-contact.css"
+import { useEffect, useState } from "react"
+import { Fade } from "react-awesome-reveal";
+
+
+export default function Contact() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneContact, setPhoneContact] = useState("");
+    const [comments, setComments] = useState("Olá, gostaria de solicitar um orçamento.");
+    const [isDisabledBtnSend, setIsDisabledBtnSend] = useState(true);
+
+    useEffect(() => {
+        if (name != "" && email != "" && phoneContact != "" && comments != "") return setIsDisabledBtnSend(false)
+
+        return setIsDisabledBtnSend(true)
+    }, [name, email, phoneContact, comments]);
+
+    const sendContact = () => {
+        console.log(name);
+        console.log(email);
+        console.log(phoneContact);
+        console.log(comments);
+
+        document.querySelector(".alert")?.classList.remove("d-none");
+
+        setName("");
+        setEmail("");
+        setPhoneContact("");
+        setComments("");
+
+        setTimeout(() => {
+            document.querySelector(".alert")?.classList.add("d-none");
+        }, 3500);
+    }
+
+    return (
+        <section id="section-contact">
+            <div className="space-menu"></div>
+            <div className="container pb-5">
+                <Fade>
+                <div className="mb-5">
+                    <h2 className="p-0 m-0">ENTRE EM CONTATO PARA SOLICITAR UM ORÇAMENTO</h2>
+                    <div className="small text-orange p-0 m-0">Preencha todos os campos para poder solicitar o orçamento.</div>
+                </div>
+                </Fade>
+                
+                <Fade>
+                    <div className="alert alert-success text-center d-none" role="alert">
+                        Enviado com sucesso!! Assim que possível entraremos em contato <i className="bi bi-check-circle"></i>
+                    </div>
+                </Fade>
+                <div className="d-flex justify-content-between w-100 flex-column flex-lg-row flex-md-row flex-sm-column">
+                    <form className="w-100 m-3 mx-auto">
+                        <Fade>
+                        <button className="w-100 btn btn-whatsapp">
+                            Entre em contrato via Whatsapp <i className="bi bi-whatsapp"></i>
+                        </button>
+                        </Fade>
+
+                        <Fade>
+                            <p className="w-100 text-center py-3">ou</p>
+                        </Fade>
+
+                        <Fade>
+                        <div className="mb-3 form-control w-100 divInput m-0 p-0 ps-2 d-flex align-items-center">
+                            <input className="border-0 shadow-none w-100 text-gray" type="text" placeholder="Digite seu nome"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)} />
+                            <i className="bi bi-person mx-2 fs-5 text-gray"></i>
+                        </div>
+                        </Fade>
+
+                        <Fade>
+                        <div className="mb-3 form-control w-100 divInput m-0 p-0 ps-2 d-flex align-items-center">
+                            <input className="border-0 shadow-none w-100 text-gray" type="text" placeholder="Digite seu email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}/>
+                            <i className="bi bi-envelope mx-2 fs-5 text-gray"></i>
+                        </div>
+                        </Fade>
+
+                        <Fade>
+                        <div className="mb-3 form-control w-100 divInput m-0 p-0 ps-2 d-flex align-items-center">
+                            <input className="border-0 shadow-none w-100 text-gray" type="text" placeholder="Digite seu telefone"
+                            value={phoneContact}
+                            onChange={(e) => setPhoneContact(e.target.value)}/>
+                            <i className="bi bi-telephone mx-2 fs-5 text-gray"></i>
+                        </div>
+                        </Fade>
+                        
+                        <Fade>
+                            <textarea className="form-control shadow-none"
+                        placeholder="Digite sua mensagem"
+                        value={comments}
+                        onChange={(e) => setComments(e.target.value)}
+                        ></textarea>
+                        </Fade>
+
+                        <Fade>
+                        <div className="w-100 text-end py-4">
+                            <button type="button" disabled={isDisabledBtnSend} className="btn btn-orange" onClick={() => sendContact()}>
+                                Enviar 
+                                <i className="bi bi-check"></i>
+                            </button>
+                        </div>
+                        </Fade>
+                    </form>
+
+
+                    <div className="w-100 m-3 mx-auto text-center">
+                        <Fade>
+                            <p>Estamos localizados na Rua: Exemplo, Nº 00. Centro - Curitiba/PR</p>
+                            <p>Atendimentos de seg a sáb. Das 8h00 as 17h00</p>
+                        </Fade>
+
+                        <Fade>
+                            <div className="maps mx-auto"></div>
+                        </Fade>
+                    </div>
+                </div>
+            </div>
+            <Fade>
+                <div className="d-flex justify-content-start">
+                    <div className="logoBaseForteOrange"></div>
+                </div>
+            </Fade>
+        </section>
+    )
+}

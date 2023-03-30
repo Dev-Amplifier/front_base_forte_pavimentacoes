@@ -1,0 +1,25 @@
+@import url("./../../helper.css");
+
+#section-gallery {
+    background-color: var(--main-orange) !important;
+
+}
+.carousel {
+    height: 400px !important;
+    overflow: hidden;
+    scroll-behavior: smooth !important;
+}
+
+.imgCarousel {
+    width: auto;
+    max-width: 97% !important;
+    height: auto;
+    max-height: 500px !important;
+    transition: all .3s ease;
+}
+
+.imgCarousel:hover {
+    margin: 15px !important;
+    transform: scale(1.2) !important;
+    border: 2px solid #cfcece;
+}

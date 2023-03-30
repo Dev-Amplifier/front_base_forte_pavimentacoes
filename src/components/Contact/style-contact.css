@@ -1,0 +1,38 @@
+@import url("./../../helper.css");
+
+#section-contact {
+    background-color: var(--main-gray);
+    color: #FFF;
+}
+.btn-whatsapp, input, .divInput, textarea {
+    transition: all .3s ease !important;
+}
+
+.btn-whatsapp {
+    background-color: #57AA7A;
+    color: #fff;
+}
+
+.btn-whatsapp:hover {
+    background-color: #24cd6a;
+    color: #fff;
+}
+input {
+    height: 35px;
+}
+
+input:focus {
+    outline: none;
+ 
+}
+
+.divInput:focus-within, textarea:focus {
+   border-bottom: 3px solid var(--main-orange) !important;
+}
+
+.maps {
+    width: 90% !important;
+    height: 400px !important;
+    background-color: #ccc;
+}
+

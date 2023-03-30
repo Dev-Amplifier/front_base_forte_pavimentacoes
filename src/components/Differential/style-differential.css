@@ -1,0 +1,49 @@
+@import url("./../../helper.css");
+#section-differential {
+    color: var(--main-gray) !important;
+}
+.card-differential {
+    width: 220px !important;
+}
+
+.card-differential > p {
+    padding: 10px 5px;
+    font-size: 12px;
+}
+
+.card-differential > div {
+    width: 100% !important;
+    background-color: var(--main-gray);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important; 
+    border-radius: 15px !important;
+    color: var(--main-orange);
+}
+
+
+.iconStreet, .iconPaving, .iconEscavadeira{
+    width: 250px !important;
+    height: 150px !important;
+    background-position: center !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.iconStreet {
+    background-image: url("./../../assets/road-icon-white.png") !important;
+}
+.iconPaving {
+    background-image: url("./../../assets/paver-icon-white.png") !important;
+}
+.iconEscavadeira {
+    background-image: url("./../../assets/escavadeira-icon-white.png") !important;
+}
+
+@media screen and (max-width: 580px) {
+    .container {
+        text-align: center !important;
+        padding-inline: 30px !important;
+    }
+}

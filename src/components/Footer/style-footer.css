@@ -1,0 +1,21 @@
+@import url("./../../helper.css");
+
+#icon-instagram-footer {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 100% !important;
+    width: 30px !important;
+    height:30px !important;
+    background: var(--main-gray) !important;
+    margin: 10px 0;
+    color: var(--main-orange) !important;
+}
+
+#logoDevAmp {
+    font-size: 12px !important;
+}
+
+.icon-facebook-footer {
+    font-size: 30px !important;
+}

@@ -1,0 +1,67 @@
+:root {
+  --main-gray: #62717f;
+  --main-orange: #ff6b06;
+}
+
+button {
+  transition: all .3s ease !important;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.bg-orange  {
+  background-color: var(--main-orange) !important;
+}
+
+.bg-gray  {
+  background-color: var(--main-gray) !important;
+}
+
+.text-orange {
+  color: var(--main-orange);
+}
+
+.text-gray {
+  color: var(--main-gray) !important;
+}
+
+.btn-orange {
+  background-color: var(--main-orange) !important;
+  color: var(--main-gray) !important;
+}
+
+.btn-orange:hover {
+  background-color: var(--main-gray)!important;
+  color:  var(--main-orange)!important;
+  border: 1px solid var(--main-orange)!important;
+}
+
+.btn-gray {
+  background-color: var(--main-gray) !important;
+  color: var(--main-orange) !important;
+}
+
+.space-menu {
+    width: 100% !important;
+    height: 110px !important;
+    background-color: transparent;
+    margin-bottom: 5px !important;
+}
+
+.logoBaseForteGray, .logoBaseForteOrange {
+    width: 150px !important;
+    height: 90px !important;
+    background-position: center !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.logoBaseForteGray {
+   background-image: url("./assets/LOGO_BASE_FORTE-4-sem-fundo.png") !important;
+}
+
+.logoBaseForteOrange {
+    background-image: url("./assets/LOGO_BASE_FORTE-3-sem-fundo.png") !important;
+}

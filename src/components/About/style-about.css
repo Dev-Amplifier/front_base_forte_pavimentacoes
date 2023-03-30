@@ -1,0 +1,13 @@
+@import url("./../../helper.css");
+
+#section-about {
+    background-color: var(--main-orange) !important;
+    color: #FFF;
+}
+
+@media screen and (max-width: 580px) {
+    .container-about {
+        text-align: center;
+        padding-inline: 30px !important;
+    }
+}

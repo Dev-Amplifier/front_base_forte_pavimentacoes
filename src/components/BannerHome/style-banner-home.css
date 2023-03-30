@@ -1,0 +1,78 @@
+@import url("./../../helper.css");
+
+#banner {
+    position: relative !important;
+}
+#banner-image {
+    width: 100% !important;
+    height: 90vh !important;
+    background-image: url("./../../assets/banner-main.jpg") !important;
+    background-position: center !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(55%);
+}
+
+#content-banner {
+    width: 100% !important;
+    height: 90vh !important;
+    position: absolute !important;
+    top: 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#redes-link {
+    position: absolute;
+    right: 40px !important;
+}
+
+#logo-banner {
+    background-image: url("./../../assets/LOGO_BASE_FORTE-1-sem-fundo.png") !important;
+    background-position: center !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40vw !important;
+    height: 30vh !important;
+    min-width: 400px !important;
+}
+
+.title-banner {
+    margin-top: -30px !important;
+    font-weight: normal !important;
+}
+
+#icon-facebook, #icon-instagram {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 100% !important;
+    width: 26px !important;
+    height:26px !important;
+    background: #FFF !important;
+    margin: 10px 0;
+}
+
+#icon-facebook > i {
+    font-size: 26px !important;
+    color: var(--main-gray) !important;
+}
+
+#icon-instagram > i {
+     font-size: 16px !important;
+     color: var(--main-gray) !important;
+}
+
+@media screen and (max-width: 720px) {
+    #redes-link {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: 20px !important;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 !important;
+    }
+}
