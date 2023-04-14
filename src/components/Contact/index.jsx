@@ -10,6 +10,7 @@ export default function Contact() {
     const [email, setEmail] = useState("");
     const [phoneContact, setPhoneContact] = useState("");
     const [comments, setComments] = useState("Olá, gostaria de solicitar um orçamento.");
+    const [loading, setLoading] = useState(false);
     const [isDisabledBtnSend, setIsDisabledBtnSend] = useState(true);
 
     useEffect(() => {
@@ -18,21 +19,24 @@ export default function Contact() {
         return setIsDisabledBtnSend(true)
     }, [name, email, phoneContact, comments]);
 
-    const sendContact = () => {
-        const result = api.post("send_email/", {name, email, phoneContact, comments});
+    const sendContact = async () => {
+        setLoading(true)
+        const result = await api.post("send_email/", {name, email, phoneContact, comments});
         const { status } = result
 
         if (status == 200) {
             document.querySelector(".alert")?.classList.remove("d-none");
-             setName("");
+            setName("");
             setEmail("");
             setPhoneContact("");
             setComments("");
 
-            return setTimeout(() => {
+            setTimeout(() => {
                 document.querySelector(".alert")?.classList.add("d-none");
             }, 3500);
         }
+
+        setLoading(false)
     }
 
     return (
@@ -100,9 +104,12 @@ export default function Contact() {
 
                         <Fade>
                         <div className="w-100 text-end py-4">
-                            <button type="button" disabled={isDisabledBtnSend} className="btn btn-orange" onClick={() => sendContact()}>
-                                Enviar 
-                                <i className="bi bi-check"></i>
+                            <button type="button" disabled={isDisabledBtnSend || loading} className="btn btn-orange" onClick={() => sendContact()}>
+                                    {loading ? 
+                                        <div class="spinner-border spinner-border-sm mx-4" role="status"></div>
+                                        :
+                                        <span>Enviar <i className="bi bi-check"></i></span>
+                                    }
                             </button>
                         </div>
                         </Fade>

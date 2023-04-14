@@ -1,3 +1,5 @@
+@import url("./helper.css");
+
 .App {
   text-align: center;
 }
@@ -26,6 +28,28 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+   
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-gray); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-orange); 
 }
 
 @keyframes App-logo-spin {
