@@ -19,7 +19,7 @@ export default function Contact() {
     }, [name, email, phoneContact, comments]);
 
     const sendContact = () => {
-        const result = api.post("send_email");
+        const result = api.post("send_email/", {name, email, phoneContact, comments});
         const { status } = result
 
         if (status == 200) {
