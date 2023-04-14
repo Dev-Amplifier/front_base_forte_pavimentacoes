@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "./style-header.css"
 import { Fade } from "react-awesome-reveal";
+import logo from "./../../assets/LOGO_BASE_FORTE-1-sem-fundo.png"
+import logoOrage from "./../../assets/LOGO_BASE_FORTE-3-sem-fundo.png"
 
 export default function Header() {
     // const scrollY = window.scrollY 
@@ -24,8 +26,9 @@ export default function Header() {
     return (
             <header>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary position-absolute top-0 w-100">
-                    <div className="container">
-                        
+                <div className="container">
+
+                            <img src={logo} className="d-none" />
                             <a className="navbar-brand link-light" href="#">
                                 <div className="logo"></div>
                             </a>
@@ -50,8 +53,8 @@ export default function Header() {
                                         <a href="#section-contact" className="nav-link link-white fs-6" >CONTATO</a>
                                     </li>
                                 </ul>
-                            </div>
-                    
+                                </div>
+                          <img src={logoOrage} className="d-none" />
                     </div>
                 </nav>
             </header>

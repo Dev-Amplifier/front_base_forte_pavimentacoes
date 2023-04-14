@@ -12,10 +12,10 @@ export default function BannerHome() {
                         <h5 className="title-banner">TECNOLOGIA E QUALIDADE</h5>
                     </div>
                     <div id="redes-link">
-                        <div className="link-hover ">
+                        <div className="link-hover cursor-pointer">
                             <i className="bi bi-facebook fs-4"></i>
                         </div>
-                        <div className="link-hover ">
+                        <div className="link-hover cursor-pointer">
                             <i className="bi bi-instagram fs-4"></i>
                         </div>
                     </div>

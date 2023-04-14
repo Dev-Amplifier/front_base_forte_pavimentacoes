@@ -8,10 +8,10 @@ export default function Footer() {
         <footer className="w-100 bg-orange p-1 text-gray d-flex justify-content-between align-items-center flex-lg-row flex-md-row flex-sm-column flex-column">
             <Fade>
                 <div className="d-flex align-items-center p-3">
-                    <div className="link-hover mx-1">
+                    <div className="link-hover mx-1 cursor-pointer">
                         <i className="bi bi-facebook fs-3"></i>
                     </div>
-                    <div className="link-hover mx-1">
+                    <div className="link-hover mx-1 cursor-pointer">
                         <i className="bi bi-instagram text-orenge fs-3"></i>
                     </div>
                 </div>

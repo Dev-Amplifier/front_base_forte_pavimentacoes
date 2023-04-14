@@ -3,11 +3,11 @@
   --main-orange: #ff6b06;
 }
 
-button {
+button, a {
   transition: all .3s ease !important;
 }
 
-button:hover {
+button:hover, a:hover {
   transform: scale(1.05);
 }
 
@@ -64,4 +64,7 @@ button:hover {
 
 .logoBaseForteOrange {
     background-image: url("./assets/LOGO_BASE_FORTE-3-sem-fundo.png") !important;
+}
+.cursor-pointer {
+  cursor: pointer !important;
 }

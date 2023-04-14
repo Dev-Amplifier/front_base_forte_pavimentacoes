@@ -33,6 +33,6 @@ input:focus {
 .maps {
     width: 90% !important;
     height: 400px !important;
-    background-color: #ccc;
+    border-radius: 10 !important;
 }
 

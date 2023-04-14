@@ -54,8 +54,8 @@ export default function Gallery() {
                 </Fade>
 
                 <Fade>
-                    <div className="card-gallary d-flex mb-5">
-                        <button className="btn btn-gray my-2 mx-1" onClick={handleLeftClick}>
+                    <div className="card-gallary d-flex mb-5 align-items-center">
+                        <button className="btn btn-gray my-2 mx-1 rounded-5" onClick={handleLeftClick}>
                             <i className="bi bi-caret-left-fill"></i>
                         </button>
                         

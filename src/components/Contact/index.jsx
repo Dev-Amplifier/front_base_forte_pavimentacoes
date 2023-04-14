@@ -1,6 +1,8 @@
 import "./style-contact.css"
 import { useEffect, useState } from "react"
 import { Fade } from "react-awesome-reveal";
+import api from "../../services/api";
+
 
 
 export default function Contact() {
@@ -17,21 +19,20 @@ export default function Contact() {
     }, [name, email, phoneContact, comments]);
 
     const sendContact = () => {
-        console.log(name);
-        console.log(email);
-        console.log(phoneContact);
-        console.log(comments);
+        const result = api.post("send_email");
+        const { status } = result
 
-        document.querySelector(".alert")?.classList.remove("d-none");
+        if (status == 200) {
+            document.querySelector(".alert")?.classList.remove("d-none");
+             setName("");
+            setEmail("");
+            setPhoneContact("");
+            setComments("");
 
-        setName("");
-        setEmail("");
-        setPhoneContact("");
-        setComments("");
-
-        setTimeout(() => {
-            document.querySelector(".alert")?.classList.add("d-none");
-        }, 3500);
+            return setTimeout(() => {
+                document.querySelector(".alert")?.classList.add("d-none");
+            }, 3500);
+        }
     }
 
     return (
@@ -53,9 +54,9 @@ export default function Contact() {
                 <div className="d-flex justify-content-between w-100 flex-column flex-lg-row flex-md-row flex-sm-column">
                     <form className="w-100 m-3 mx-auto">
                         <Fade>
-                        <button className="w-100 btn btn-whatsapp">
+                        <a href="https://wa.me/5541999939196?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento" target="_blank" className="w-100 btn btn-whatsapp shadow-none">
                             Entre em contrato via Whatsapp <i className="bi bi-whatsapp"></i>
-                        </button>
+                        </a>
                         </Fade>
 
                         <Fade>
@@ -105,17 +106,28 @@ export default function Contact() {
                             </button>
                         </div>
                         </Fade>
+
+                       
                     </form>
 
-
-                    <div className="w-100 m-3 mx-auto text-center">
+                    <div className="w-100 m-3">
                         <Fade>
-                            <p>Estamos localizados na Rua: Exemplo, Nº 00. Centro - Curitiba/PR</p>
-                            <p>Atendimentos de seg a sáb. Das 8h00 as 17h00</p>
-                        </Fade>
+                            <div className="w-100 p-5">
+                                <div className="mb-3">
+                                    <h3>Localização: </h3>
+                                    <p>Estamos localizados na Rua:  Rua Professor Duílio Calderari,
+                                        <br /> 
+                                        Nº 2322. Jardim Paulista - Campina Grande do Sul</p>
+                                </div>
+                                <div className="mb-3">
+                                    <h4>Atendimento:</h4>
+                                    <p>Atendimentos de seg a sáb. Das 8h00 as 18h00</p>
+                                </div>
 
-                        <Fade>
-                            <div className="maps mx-auto"></div>
+                                <a className="btn btn-light w-100" target="_blank" href="https://www.google.com/maps/place/R.+Prof.+Du%C3%ADlio+Calderari,+2322+-+Jardim+Paulista,+Campina+Grande+do+Sul+-+PR,+83430-000/@-25.3646118,-49.1050337,17z/data=!3m1!4b1!4m6!3m5!1s0x94dcec0d9aa63b95:0x79f281674beff7d2!8m2!3d-25.3646118!4d-49.1050337!16s%2Fg%2F11b8_pj5g5">
+                                    <span className="fw-bold text-gray">Como chegar ? <i class="bi bi-geo-alt"></i></span>
+                                </a>
+                            </div>
                         </Fade>
                     </div>
                 </div>
