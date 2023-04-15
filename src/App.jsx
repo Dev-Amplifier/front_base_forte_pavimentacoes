@@ -7,9 +7,11 @@ import Differential from './components/Differential';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { useEffect } from 'react';
 
 
 function App() {
+
   return (
     <main>
       <Header />

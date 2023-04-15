@@ -2,6 +2,7 @@ import "./style-contact.css"
 import { useEffect, useState } from "react"
 import { Fade } from "react-awesome-reveal";
 import api from "../../services/api";
+import {mask, unMask} from "remask"
 
 
 
@@ -19,24 +20,38 @@ export default function Contact() {
         return setIsDisabledBtnSend(true)
     }, [name, email, phoneContact, comments]);
 
+
+    const setValuePhone = (e) => {
+        setPhoneContact(mask(unMask(e.target.value), ['(99) 9999-9999', '(99) 99999-9999']))
+    }
+
     const sendContact = async () => {
+        console.log("chamou")
         setLoading(true)
-        const result = await api.post("send_email/", {name, email, phoneContact, comments});
-        const { status } = result
+        
+        
+        const phoneFormat = unMask(phoneContact)
+        try {
+            const result = await api.post("send_email/", {name, email, phoneContact: phoneFormat, comments});
+            const { status } = result
+            console.log(status)
+            if (status == 200) {
+                document.querySelector(".alert")?.classList.remove("d-none");
+                setName("");
+                setEmail("");
+                setPhoneContact("");
+                setComments("");
 
-        if (status == 200) {
-            document.querySelector(".alert")?.classList.remove("d-none");
-            setName("");
-            setEmail("");
-            setPhoneContact("");
-            setComments("");
-
-            setTimeout(() => {
-                document.querySelector(".alert")?.classList.add("d-none");
-            }, 3500);
+                setTimeout(() => {
+                    document.querySelector(".alert")?.classList.add("d-none");
+                }, 3500);
+            }
+        } catch (err) {
+            console.error("❌ Send email: ", err.message)
+        } finally {
+            setLoading(false)
         }
-
-        setLoading(false)
+        
     }
 
     return (
@@ -89,8 +104,9 @@ export default function Contact() {
                         <div className="mb-3 form-control w-100 divInput m-0 p-0 ps-2 d-flex align-items-center">
                             <input className="border-0 shadow-none w-100 text-gray" type="text" placeholder="Digite seu telefone"
                             value={phoneContact}
-                            onChange={(e) => setPhoneContact(e.target.value)}/>
+                            onChange={(e) => setValuePhone(e)}/>
                             <i className="bi bi-telephone mx-2 fs-5 text-gray"></i>
+                                
                         </div>
                         </Fade>
                         
@@ -106,7 +122,7 @@ export default function Contact() {
                         <div className="w-100 text-end py-4">
                             <button type="button" disabled={isDisabledBtnSend || loading} className="btn btn-orange" onClick={() => sendContact()}>
                                     {loading ? 
-                                        <div class="spinner-border spinner-border-sm mx-4" role="status"></div>
+                                        <div className="spinner-border spinner-border-sm mx-4" role="status"></div>
                                         :
                                         <span>Enviar <i className="bi bi-check"></i></span>
                                     }
@@ -132,7 +148,7 @@ export default function Contact() {
                                 </div>
 
                                 <a className="btn btn-light w-100" target="_blank" href="https://www.google.com/maps/place/R.+Prof.+Du%C3%ADlio+Calderari,+2322+-+Jardim+Paulista,+Campina+Grande+do+Sul+-+PR,+83430-000/@-25.3646118,-49.1050337,17z/data=!3m1!4b1!4m6!3m5!1s0x94dcec0d9aa63b95:0x79f281674beff7d2!8m2!3d-25.3646118!4d-49.1050337!16s%2Fg%2F11b8_pj5g5">
-                                    <span className="fw-bold text-gray">Como chegar ? <i class="bi bi-geo-alt"></i></span>
+                                    <span className="fw-bold text-gray">Como chegar ? <i className="bi bi-geo-fill"></i></span>
                                 </a>
                             </div>
                         </Fade>

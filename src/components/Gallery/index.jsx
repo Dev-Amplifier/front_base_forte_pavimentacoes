@@ -17,13 +17,13 @@ import terraplanagem03 from "./../../assets/terraplanagem03.jpg";
 export default function Gallery() {
     
     const galleryImgs = [
-            paver01,
-            paver02,
-            paver03,
             pavimentacao01,
             pavimentacao02,
             pavimentacao03,
             pavimentacao04,
+            paver01,
+            paver02,
+            paver03,
             terraplanagem01,
             terraplanagem02,
             terraplanagem03,
@@ -32,12 +32,10 @@ export default function Gallery() {
     const carousel = useRef(null);
 
     function handleLeftClick() {
-        console.log("left: ", carousel);
         carousel.current.scrollLeft -= carousel.current.offsetWidth;
     }
     
     function handleRightClick() {
-        console.log("right: ", carousel.current.offsetWidth);
         carousel.current.scrollLeft += carousel.current.offsetWidth;
     }
 
