@@ -74,7 +74,7 @@ export default function Contact() {
                     <form className="w-100 m-3 mx-auto">
                         <Fade>
                         <a href="https://wa.me/5541999939196?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento" target="_blank" className="w-100 btn btn-whatsapp shadow-none">
-                            Entre em contrato via Whatsapp <i className="bi bi-whatsapp"></i>
+                            Entre em contato via Whatsapp <i className="bi bi-whatsapp"></i>
                         </a>
                         </Fade>
 
