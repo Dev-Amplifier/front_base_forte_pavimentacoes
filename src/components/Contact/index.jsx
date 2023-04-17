@@ -133,7 +133,7 @@ export default function Contact() {
                        
                     </form>
 
-                    <div className="w-100 m-3">
+                    <div className="w-100 m-3 mx-auto">
                         <Fade>
                             <div className="w-100 p-5">
                                 <div className="mb-3">
