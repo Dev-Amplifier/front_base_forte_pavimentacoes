@@ -26,7 +26,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copia os arquivos buildados do React para o diretório padrão do Nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 # Expõe a porta 80
 EXPOSE 80
