@@ -18,7 +18,7 @@ export default function Footer() {
                 <div className="text-center">
                     <p>Todos os direitos reservados a Base Forte Pavimentações@{actualDate}</p>
                 </div>
-                <a href="https://www.devamp.com.br/" target="_blank" id="logoDevAmp" className="px-3 text-decoration-none link-light text-center d-flex flex-column align-items-center justify-content-center">
+                <a href="https://linkedin.com/in/dev-azevedo" target="_blank" id="logoDevAmp" className="px-3 text-decoration-none link-light text-center d-flex flex-column align-items-center justify-content-center">
                     <span className="m-0 p-0">Desenvolvido por:</span>
                     <span className="fw-bold m-0 p-0 fs-6">DEV_AMP</span>
                     <span>S O F T W A R E</span>
