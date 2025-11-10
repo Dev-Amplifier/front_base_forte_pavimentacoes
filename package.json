@@ -2,7 +2,7 @@
   "name": "front_base_forte_pavimentacoes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://site-baseforte-pavimentacoes.vps-kinghost.net",
+  "homepage": "https://basefortepavimentacoes.com.br",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@react-google-maps/api": "^2.18.1",
