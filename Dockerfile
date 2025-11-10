@@ -11,6 +11,9 @@ RUN npm run build
 FROM node:20-alpine
 WORKDIR /app
 RUN npm install -g serve
-COPY --from=build /app/build ./dist
+
+# copia o build final da etapa anterior
+COPY --from=build /app/build ./build
+
 EXPOSE 3000
-CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD ["serve", "-s", "build", "-l", "3000"]
